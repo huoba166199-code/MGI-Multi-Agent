@@ -1,0 +1,16 @@
+# ========= 敏感信息 =========
+.env
+*.key
+
+# ========= 运行缓存 =========
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+*.db-shm
+*.db-wal
+
+# ========= 编辑器与系统文件 =========
+.vscode/
+.idea/
+.DS_Store
