@@ -4,10 +4,14 @@ services:
   mgi-multi-agent:
     build: .
     container_name: mgi_multi_agent_web
+    # 【修正】：由于 Dockerfile 中指定了 8503，这里必须是 8503:8503
     ports:
       - "8503:8503"
     volumes:
+      # 数据目录挂载
       - ./data:/app/data
+      # 日志目录挂载（确保能看到最新的 agent.log 和 audit.log）
+      - ./logs:/app/logs
     env_file:
       - .env
     restart: unless-stopped

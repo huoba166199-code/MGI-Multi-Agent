@@ -1,17 +1,8 @@
-from typing import TypedDict, List, Annotated
-import operator
+from typing import TypedDict
 
 class AgentState(TypedDict):
-    messages: Annotated[List[str], operator.add]
-    next_agent: str
-    device_id: str
-    vcf_path: str
-    report_draft: str
-    task_completed: bool
-    audit_passed: bool
-    retry_count: int
-    equipment_done: bool
-    sequence_done: bool
-    compliance_done: bool
-    # === 新增：用于记录 Tool 执行的异常信息 ===
+    messages: list
+    equipment_report: str
+    sequence_report: str
+    final_report: str
     error_msg: str
